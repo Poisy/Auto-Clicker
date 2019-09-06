@@ -36,7 +36,7 @@ warning_label_style = {
 
 click_times_label_style = {
     "padx" : 0,
-    "pady" : 10,
+    "pady" : 2,
     "anchor" : 'center'
 }
 
@@ -48,12 +48,42 @@ click_times_entry_style = {
 
 click_delay_label_style = {
     "padx" : 0,
-    "pady" : 10,
+    "pady" : 2,
     "anchor" : 'center'
 }
 
 click_delay_entry_style = {
     "padx" : 0,
     "pady" : 10,
+    "anchor" : 'center'
+}
+
+click_timer_label_style = {
+    "padx" : 0,
+    "pady" : 2,
+    "anchor" : 'center'
+}
+
+click_timer_entry_style = {
+    "padx" : 0,
+    "pady" : 10,
+    "anchor" : 'center'
+}
+
+click_button_label_style = {
+    "padx" : 0,
+    "pady" : 10,
+    "anchor" : 'center'
+}
+
+click_button_entry_left_style = {
+    "padx" : 0,
+    "pady" : 2,
+    "anchor" : 'center'
+}
+
+click_button_entry_right_style = {
+    "padx" : 0,
+    "pady" : 2,
     "anchor" : 'center'
 }
