@@ -13,7 +13,8 @@ main_style = {
 
 window_style = {
     "title" : 'Auto Clicker',
-    "size" : '1200x900',
+    "size_h" : 800,
+    "size_w" : 600,
     "bg" : '#404040',
     "bd" : 15,
     "relief" : 'ridge',
@@ -26,7 +27,7 @@ header_label_style = {
     "fg" : '#00ff00',
     "side" : 'top',
     "padx" : 0,
-    "pady" : 30,
+    "pady" : 20,
     "ipadx" : 100,
 }
 
@@ -38,7 +39,7 @@ info_button_style = {
     "bd" : 5,
     "relief" : 'ridge',
     "side": 'top',
-    "padx": 30,
+    "padx": 10,
     "pady": 0,
     "ipadx" : 10,
     "ipady" : 2,
@@ -135,8 +136,8 @@ button_start_style = {
     "bd" : 5,
     "relief" : 'ridge',
     "side" : 'left',
-    "padx" : 150,
-    "pady" : 100,
+    "padx" : 30,
+    "pady" : 25,
     "ipadx" : 25,
     "ipady" : 5,
     "anchor" : 'sw'
@@ -149,8 +150,8 @@ button_quit_style = {
     "bd" : 5,
     "relief" : 'ridge',
     "side" : 'right',
-    "padx" : 150,
-    "pady" : 100,
+    "padx" : 30,
+    "pady" : 25,
     "ipadx" : 25,
     "ipady" : 5,
     "anchor" : 'sw'
@@ -163,7 +164,7 @@ warning_label_style = {
     "font" : 'Roboto 10 bold ',
     "side": 'bottom',
     "padx": 0,
-    "pady": 100,
+    "pady": 10,
     "ipadx" : 30,
     "ipady" : 20,
     "anchor": 's',

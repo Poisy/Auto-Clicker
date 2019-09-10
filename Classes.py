@@ -1,9 +1,10 @@
 
 #===============================================Imports==============================================================
-from tkinter import *
 from pyautogui import *
 from Style import *
 import time
+from tkinter import *
+
 
 #===================================The functionality of the program=================================================
 class ClickEvent:
@@ -36,6 +37,11 @@ class Window(Frame, ClickEvent):
         Frame.__init__(self, master)
         self.master = master
         self.mouse_button = StringVar(None, 'left')
+        self.window_size = 1
+        #Check the screen resolution and decide how much to multiply it
+        #To make bigger for bigger screens
+        if self.winfo_screenheight() > 1000:
+            self.window_size = 1.5
         self.widgets()
         self.configurations()
         self.packing()
@@ -68,7 +74,8 @@ class Window(Frame, ClickEvent):
 
         #=======================================Window===============================================================
         self.master.title(window_style['title'])
-        self.master.geometry(window_style['size'])
+        self.master.geometry(f"{int(window_style['size_h']*self.window_size)}x"
+                             f"{int(window_style['size_w']*self.window_size)}")
         self.config(bg=window_style['bg'],
                     bd=window_style['bd'],
                     relief=window_style['relief'],
@@ -176,78 +183,78 @@ class Window(Frame, ClickEvent):
 
 
         self.header_label.pack(side=header_label_style['side'],
-                               padx=header_label_style['padx'],
-                               pady=header_label_style['pady'],
+                               padx=header_label_style['padx']*self.window_size,
+                               pady=header_label_style['pady']*self.window_size,
                                ipadx=header_label_style['ipadx'])
 
 
         self.info_button.pack(side=info_button_style['side'],
-                              padx=info_button_style['padx'],
-                              pady=info_button_style['pady'],
+                              padx=info_button_style['padx']*self.window_size,
+                              pady=info_button_style['pady']*self.window_size,
                               anchor=info_button_style['anchor'],
                               ipadx=info_button_style['ipadx'],
                               ipady=info_button_style['ipady'])
 
 
-        self.click_times_label.pack(padx=click_times_label_style['padx'],
-                                    pady=click_times_label_style['pady'],
+        self.click_times_label.pack(padx=click_times_label_style['padx']*self.window_size,
+                                    pady=click_times_label_style['pady']*self.window_size,
                                     anchor=click_times_label_style['anchor'])
 
 
-        self.click_times_entry.pack(padx=click_times_entry_style['padx'],
-                               pady=click_times_entry_style['pady'],
+        self.click_times_entry.pack(padx=click_times_entry_style['padx']*self.window_size,
+                               pady=click_times_entry_style['pady']*self.window_size,
                                anchor=click_times_entry_style['anchor'])
 
 
-        self.click_delay_label.pack(padx=click_delay_label_style['padx'],
-                               pady=click_delay_label_style['pady'],
+        self.click_delay_label.pack(padx=click_delay_label_style['padx']*self.window_size,
+                               pady=click_delay_label_style['pady']*self.window_size,
                                anchor=click_delay_label_style['anchor'])
 
 
-        self.click_delay_entry.pack(padx=click_delay_entry_style['padx'],
-                               pady=click_delay_entry_style['pady'],
+        self.click_delay_entry.pack(padx=click_delay_entry_style['padx']*self.window_size,
+                               pady=click_delay_entry_style['pady']*self.window_size,
                                anchor=click_delay_entry_style['anchor'],)
 
 
-        self.click_timer_label.pack(padx=click_timer_label_style['padx'],
-                               pady=click_timer_label_style['pady'],
+        self.click_timer_label.pack(padx=click_timer_label_style['padx']*self.window_size,
+                               pady=click_timer_label_style['pady']*self.window_size,
                                anchor=click_timer_label_style['anchor'])
 
 
-        self.click_timer_entry.pack(padx=click_timer_entry_style['padx'],
-                               pady=click_timer_entry_style['pady'],
+        self.click_timer_entry.pack(padx=click_timer_entry_style['padx']*self.window_size,
+                               pady=click_timer_entry_style['pady']*self.window_size,
                                anchor=click_timer_entry_style['anchor'])
 
 
-        self.click_button_entry_left.pack(padx=click_button_entry_left_style['padx'],
-                               pady=click_button_entry_left_style['pady'],
+        self.click_button_entry_left.pack(padx=click_button_entry_left_style['padx']*self.window_size,
+                               pady=click_button_entry_left_style['pady']*self.window_size,
                                anchor=click_button_entry_left_style['anchor'])
 
 
-        self.click_button_entry_right.pack(padx=click_button_entry_right_style['padx'],
-                               pady=click_button_entry_right_style['pady'],
+        self.click_button_entry_right.pack(padx=click_button_entry_right_style['padx']*self.window_size,
+                               pady=click_button_entry_right_style['pady']*self.window_size,
                                anchor=click_button_entry_right_style['anchor'])
 
 
         self.button_start.pack(side=button_start_style['side'],
-                          padx=button_start_style['padx'],
-                          pady=button_start_style['pady'],
+                          padx=button_start_style['padx']*self.window_size,
+                          pady=button_start_style['pady']*self.window_size,
                           ipadx=button_start_style['ipadx'],
                           ipady=button_start_style['ipady'],
                           anchor=button_start_style['anchor'])
 
 
         self.button_quit.pack(side=button_quit_style['side'],
-                         padx=button_quit_style['padx'],
-                         pady=button_quit_style['pady'],
+                         padx=button_quit_style['padx']*self.window_size,
+                         pady=button_quit_style['pady']*self.window_size,
                          ipadx=button_start_style['ipadx'],
                          ipady=button_start_style['ipady'],
                          anchor=button_quit_style['anchor'])
 
 
         self.warning_label.pack(side=warning_label_style['side'],
-                           padx=warning_label_style['padx'],
-                           pady=warning_label_style['pady'],
+                           padx=warning_label_style['padx']*self.window_size,
+                           pady=warning_label_style['pady']*self.window_size,
                            ipadx=warning_label_style['ipadx'],
                            ipady=warning_label_style['ipady'],
                            anchor=warning_label_style['anchor'])
